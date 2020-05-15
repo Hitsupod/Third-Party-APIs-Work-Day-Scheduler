@@ -1,108 +1,46 @@
-var todoInput = document.querySelector("#todo-text");
-var todoForm = document.querySelector("#todo-form");
-var todoList = document.querySelector("#todo-list");
-var todoCountSpan = document.querySelector("#todo-count");
-var btnpress = document.querySelector('#btn')
+// var todoInput = document.querySelector("#todo-text");
+// var todoForm = document.querySelector("#todo-form");
+// var todoList = document.querySelector("#todo-list");
+// var todoCountSpan = document.querySelector("#todo-count");
+var Input = document.querySelector('#username');
+var btnPress = document.querySelector('#btn');
+var inputSpan = document.querySelector('#filler');
 
-var todos = [];
+
+console.log(btnPress);
+// var todos = [];
 // Create 1 function, 24 inputs and 24 save buttons each button 
 // would save the corresponding input to local storage 
 // if button 1 is click save and display input 1
 // var elUserName = document.getElementById('username');
 // var elMsg = document.getElementById('feedback');
+// function renderNote(){
+//  var input = localStorage.getItem('username');
+//  if(username === null) {
+//    return;
+//  }
+//  inputSpan.textContent = input;
+//}
 
-function saveButton() {
-  btnpress.addEventListener('click', event)
-  document.getElementById('username').value = document.getElementById('filler').value
-}
-
-// function checkUserName(minLength) {
-  // if (elUserName.value.length < minLength) {
-    // elMsg.textContent = 'UserName must be ' + minLength + ' characters or more';
-  // } else { 
-      //  CustomElementRegistry.innerHTML = '';
-  // }
-// }  
-
-// elUserName.addEventListener('blur' , function() { 
-  // checkUsername(5);
-// }, false);
-
-
-init();
-
-function renderTodos() {
-  // Clear todoList element and update todoCountSpan
-  todoList.innerHTML = "";
-  todoCountSpan.textContent = todos.length;
-
-  // Render a new li for each todo
-  for (var i = 0; i < todos.length; i++) {
-    var todo = todos[i];
-
-    var li = document.createElement("li");
-    li.textContent = todo;
-    li.setAttribute("data-index", i);
-
-    var button = document.createElement("button");
-    button.textContent = "Complete";
-
-    li.appendChild(button);
-    todoList.appendChild(li);
-  }
-}
-
-function init() {
-  // Get stored todos from localStorage
-  // Parsing the JSON string to an object
-  var storedTodos = JSON.parse(localStorage.getItem("todos"));
-
-  // If todos were retrieved from localStorage, update the todos array to it
-  if (storedTodos !== null) {
-    todos = storedTodos;
-  }
-
-  // Render todos to the DOM
-  renderTodos();
-}
-
-function storeTodos() {
-  // Stringify and set "todos" key in localStorage to todos array
-  localStorage.setItem("todos", JSON.stringify(todos));
-}
-
-// When form is submitted...
-todoForm.addEventListener("submit", function(event) {
+// Function Save Button 
+$('#btn').click(function() {
   event.preventDefault();
+  // Event Listener for Click 
+  var btnPress = document.querySelector('#btn')
+  var elInput = document.querySelector('#username').value;
+  var elOutput = document.querySelector('#filler').value;
+  //alert('button has been click');
 
-  var todoText = todoInput.value.trim();
-
-  // Return from function early if submitted todoText is blank
-  if (todoText === "") {
+  // Take and Store Input 
+  localStorage.setItem('elOutput', elOutput);
+  localStorage.setItem('elInput', elInput);
+  // Display in Output 
+  if(username === null) {
     return;
   }
-
-  // Add new todoText to todos array, clear the input
-  todos.push(todoText);
-  todoInput.value = "";
-
-  // Store updated todos in localStorage, re-render the list
-  storeTodos();
-  renderTodos();
+  // inputSpan.innerHTML = elInput;
 });
 
-// When a element inside of the todoList is clicked...
-todoList.addEventListener("click", function(event) {
-  var element = event.target;
 
-  // If that element is a button...
-  if (element.matches("button") === true) {
-    // Get its data-index value and remove the todo element from the list
-    var index = element.parentElement.getAttribute("data-index");
-    todos.splice(index, 1);
 
-    // Store updated todos in localStorage, re-render the list
-    storeTodos();
-    renderTodos();
-  }
-});
+
