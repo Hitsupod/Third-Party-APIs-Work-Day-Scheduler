@@ -2,8 +2,32 @@ var todoInput = document.querySelector("#todo-text");
 var todoForm = document.querySelector("#todo-form");
 var todoList = document.querySelector("#todo-list");
 var todoCountSpan = document.querySelector("#todo-count");
+var btnpress = document.querySelector('#btn')
 
 var todos = [];
+// Create 1 function, 24 inputs and 24 save buttons each button 
+// would save the corresponding input to local storage 
+// if button 1 is click save and display input 1
+// var elUserName = document.getElementById('username');
+// var elMsg = document.getElementById('feedback');
+btnpress.addEventListener('click')
+function saveButton() {
+  document.getElementById('')
+  
+}
+fuc
+// function checkUserName(minLength) {
+  // if (elUserName.value.length < minLength) {
+    // elMsg.textContent = 'UserName must be ' + minLength + ' characters or more';
+  // } else { 
+      //  CustomElementRegistry.innerHTML = '';
+  // }
+// }  
+
+// elUserName.addEventListener('blur' , function() { 
+  // checkUsername(5);
+// }, false);
+
 
 init();
 
