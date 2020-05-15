@@ -10,12 +10,12 @@ var todos = [];
 // if button 1 is click save and display input 1
 // var elUserName = document.getElementById('username');
 // var elMsg = document.getElementById('feedback');
-btnpress.addEventListener('click')
+
 function saveButton() {
-  document.getElementById('')
-  
+  btnpress.addEventListener('click', event)
+  document.getElementById('username').value = document.getElementById('filler').value
 }
-fuc
+
 // function checkUserName(minLength) {
   // if (elUserName.value.length < minLength) {
     // elMsg.textContent = 'UserName must be ' + minLength + ' characters or more';
