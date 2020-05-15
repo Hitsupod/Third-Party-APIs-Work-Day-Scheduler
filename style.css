@@ -3,13 +3,13 @@
 *::after {
   box-sizing: border-box;
 }
-.before {
+/* .before {
  background-color: teal;
 
 }
 .after {
  background-color: tomato;
-}
+} */
 
 body {
   font-family: "Concert One", cursive;

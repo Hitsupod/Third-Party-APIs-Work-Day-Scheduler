@@ -28,7 +28,7 @@ $('#btn').click(function() {
   // Event Listener for Click 
   var btnPress = document.querySelector('#btn')
   var elInput = document.querySelector('#usernote').value;
-  //alert('button has been click');
+  alert('Note Saved');
   // Take and Store Input 
   localStorage.setItem('elInput', elInput);
   // Display in Output 
